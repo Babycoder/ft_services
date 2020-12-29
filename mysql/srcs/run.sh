@@ -1,4 +1,5 @@
  #!/bin/bash
 
- rc-service mariadb start
+rc-service nginx start
+rc-service mariadb start
  bash

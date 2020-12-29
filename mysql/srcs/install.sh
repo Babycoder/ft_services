@@ -3,9 +3,12 @@
 apk update
 apk add bash
 apk add mysql mysql-client
-apk add openrc
+apk add openrc nginx
 rc-status
 touch run/openrc/softlevel
-mysql_install_db --user=mysql --datadir=/var/lib/mysql
-mysqladmin -u root password toor
+adduser -D -g 'www' www
+mkdir /www
+chown -R www:www /www
+chown -R www:www /var/lib/nginx
+/etc/init.d/mariadb setup
 bash
