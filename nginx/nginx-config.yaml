@@ -17,7 +17,12 @@ spec:
         image: nginx
         imagePullPolicy: Never
         ports:
-        - containerPort: 80
+          - containerPort: 80
+            name: "http-server"
+          - containerPort: 443
+            name: "https-server"
+          - containerPort: 22
+            name: "ssh-server"
 
 ---
 
@@ -32,6 +37,13 @@ spec:
   selector:
     app: nginx
   ports:
-    - protocol: TCP
-      port: 80
-      targetPort: 80
+  - name: http 
+    port: 80
+    targetPort: 80
+  - name: https
+    port: 443
+    targetPort: 443
+  - name: ssh
+    port: 22
+    targetPort: 22
+    protocol: TCP

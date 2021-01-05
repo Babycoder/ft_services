@@ -9,5 +9,5 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 COPY srcs/default.conf /etc/nginx/conf.d
 COPY srcs/nginx-selfsigned.crt /etc/ssl/certs/
 COPY srcs/nginx-selfsigned.key /etc/ssl/private/
-EXPOSE 80 443
+EXPOSE 80 443 22
 CMD ["bash", "/script.sh"] 
