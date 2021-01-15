@@ -9,6 +9,9 @@ kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.5/manife
 
 kubectl create secret generic -n metallb-system memberlist --from-literal=secretkey="$(openssl rand -base64 128)"
 
-docker build -t local-nginx nginx/.
-kubectl create -f config.yaml
+docker build -t local-nginx 
 kubectl create -f nginx/nginx-config.yaml
+kubectl create -f config.yaml
+
+export MINIKUBE_HOME=/Users/ayghazal/goinfre
+eval $(minikube -p minikube docker-env)
