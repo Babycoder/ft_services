@@ -12,6 +12,6 @@ RUN mkdir -p /run/mysqld/
 RUN chown mysql:mysql /var/lib/mysql
 COPY srcs/mariadb-server.cnf /etc/my.cnf.d/
 COPY srcs/config.sh /
-COPY srcs/wordpressdb.sql .
+COPY srcs/wordpressdb.sql /
 RUN chmod 777 config.sh
 CMD ["sh", "config.sh"]
