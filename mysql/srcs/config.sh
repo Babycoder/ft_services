@@ -11,4 +11,9 @@ mysql < wordpressdb.sql
 
 /etc/init.d/mariadb stop
 
+tar -zxvf telegraf.apk
+mkdir /etc/telegraf
+mv telegraf.conf /etc/telegraf
+telegraf --config /etc/telegraf/telegraf.conf&
+
 /usr/bin/mysqld --user=root
